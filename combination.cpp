@@ -2,8 +2,8 @@
 
 using namespace std;
 
-void combinationWithRepetitionUtil(int *chosen, int *array, 
-    int index, int r, int start, int end)
+void combinationWithRepetitionUtil(int *chosen, const int *array, 
+    const int index, const int r, const int start, const int end)
 {
     if (index == r)
     {
@@ -20,7 +20,7 @@ void combinationWithRepetitionUtil(int *chosen, int *array,
     }
 }
 
-void combinationWithRepetition(int *array, int n, int r)
+void combinationWithRepetition(const int *array, const int n, const int r)
 {
     int chosen[r + 1];
 
