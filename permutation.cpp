@@ -1,10 +1,11 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void permutationWithRepetition(const int *array, const int n, const int r)
+void permutationWithRepetition(const vector<int> &array, const int n, const int r)
 {
-    int chosen[r + 1];
+    vector<int> chosen(r + 1);
 
     for (int i = 0; i < r + 1; i++)
         chosen[i] = 0;
@@ -34,7 +35,7 @@ void permutationWithRepetition(const int *array, const int n, const int r)
 
 int main(int argc, char **argv)
 {
-    int array[] = {0, 1, 2, 3, 4};
+    vector<int> array = {0, 1, 2, 3, 4};
     permutationWithRepetition(array, 5, 3);
 
     return 0;

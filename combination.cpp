@@ -1,8 +1,9 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void combinationWithRepetitionUtil(int *chosen, const int *array, 
+void combinationWithRepetitionUtil(vector<int> &chosen, const vector<int> &array, 
     const int index, const int r, const int start, const int end)
 {
     if (index == r)
@@ -20,16 +21,16 @@ void combinationWithRepetitionUtil(int *chosen, const int *array,
     }
 }
 
-void combinationWithRepetition(const int *array, const int n, const int r)
+void combinationWithRepetition(const vector<int> &array, const int n, const int r)
 {
-    int chosen[r + 1];
+    vector<int> chosen(r + 1);
 
     combinationWithRepetitionUtil(chosen, array, 0, r, 0, n - 1);
 }
 
 int main(int argc, char **argv)
 {
-    int array[] = {0, 1, 2, 3, 4};
+    vector<int> array = {0, 1, 2, 3, 4};
     combinationWithRepetition(array, 5, 3);
 
     return 0;
