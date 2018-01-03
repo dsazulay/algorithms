@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <stack>
 #include <unordered_set>
 #include "graph.hpp"
 
@@ -27,4 +28,36 @@ void breadthFirstSearch(Graph graph, typename Graph::node start)
                 frontier.push(next);
         }
     }
-};
+}
+
+template <typename Graph>
+void deepFirsthSearch(Graph graph, typename Graph::node start)
+{
+    typedef typename Graph::node node;
+
+    stack<node> frontier;
+    unordered_set<node> visited;
+
+    frontier.push(start);
+
+    while (!frontier.empty())
+    {
+        auto current = frontier.top();
+        frontier.pop();
+        
+        if (!visited.count(current))
+        {
+            cout << "Visiting: " << current << endl;
+            visited.insert(current);
+            
+            auto edges = graph.neighbors(current);
+
+            for (auto it = edges.rbegin();
+                it != edges.rend();
+                ++it)
+            {
+                frontier.push(*it);
+            }
+        }
+    }
+}

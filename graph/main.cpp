@@ -4,7 +4,7 @@ int main (int argc, char *argv[])
 {
     Graph<char> myGraph;
 
-    breadthFirstSearch(myGraph, 'A');
+    deepFirsthSearch(myGraph, 'A');
 
     return 0;
 }
