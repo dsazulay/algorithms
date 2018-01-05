@@ -4,6 +4,7 @@ int main (int argc, char *argv[])
 {
     Graph<char> myGraph;
 
+    deepFirsthSearch(myGraph, 'A');
     if (isCyclic(myGraph, 'A'))
         cout << "true" << endl;
     else
@@ -11,6 +12,3 @@ int main (int argc, char *argv[])
 
     return 0;
 }
-
-
-
