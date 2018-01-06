@@ -52,12 +52,8 @@ void deepFirsthSearch(Graph graph, typename Graph::node start)
             
             auto edges = graph.neighbors(current);
 
-            for (auto it = edges.rbegin();
-                it != edges.rend();
-                ++it)
-            {
+            for (auto it = edges.rbegin(); it != edges.rend(); ++it)
                 frontier.push(*it);
-            }
         }
     }
 }
